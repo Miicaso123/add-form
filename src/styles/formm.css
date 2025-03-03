@@ -1,79 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
 body {
-    background-color: #0C5FB3;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #0c5fb3;
+  font-family: 'Acme', serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
 }
 
 .expense-form {
-    background-color: #DFDAC8;
-    padding: 30px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    animation: fadeIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #dfdac8;
+  padding: 30px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .expense-form h2 {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    font-weight: bold;
+  color: #333;
+  font-weight: bold;
 }
 
 .expense-form .form-label {
-    font-weight: bold;
-    color: #333;
+  font-weight: bold;
+  color: #333;
+  padding-right: 20px;
 }
 
 .expense-form .form-control,
 .expense-form .form-select {
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+  width: 90%;
 }
 
 .expense-form .form-control:focus,
 .expense-form .form-select:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+  border: 2px solid #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
 }
 
 .expense-form .btn {
-    background-color: #0056b3;
-    border: none;
-    padding: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+  width: 100%;
+  font-family: 'Acme', serif;
+  background-color: #0056b3;
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .expense-form .btn:hover {
-    background-color: #004494;
+  background-color: #979ba0;
+  color: #333;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    background-color: #dfdac8;
+    font-size: 2rem;
+  }
+
+  .form-container {
+    padding: 0px;
+  }
+
+  .expense-form {
+    padding: 0px;
+    box-shadow: none;
+    border-radius: 10px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .expense-form .form-control,
+  .expense-form .form-select {
+    padding: 15px;
+    margin-top: 5px;
+  }
 }

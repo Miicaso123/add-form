@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 import "./../styles/formm.css"; 
 
 const Form = () => {
@@ -20,11 +23,13 @@ const Form = () => {
     });
 
     if (response.ok) {
-      alert("Expense added!");
+      toast.success("Expense added!", { position: "top-center" });
       setDate("");
       setSum("");
       setCategory("");
       setComment("");
+    } else {
+      toast.error("Failed to add expense.");
     }
   };
 
@@ -51,7 +56,12 @@ const Form = () => {
             id="sum"
             className="form-control" 
             value={sum} 
-            onChange={(e) => setSum(e.target.value)} 
+            onChange={(e) => {
+              const value = e.target.value;
+              if(value >= 0 || value === "") {
+                setSum(value);
+              }
+            }} 
             required 
           />
         </div>
@@ -85,6 +95,7 @@ const Form = () => {
 
         <button type="submit" className="btn btn-primary w-100">Submit</button>
       </form>
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
 };
