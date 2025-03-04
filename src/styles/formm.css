@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-
 body {
   background-color: #0c5fb3;
   font-family: 'Acme', serif;
@@ -116,5 +115,35 @@ body {
   .expense-form .form-select {
     padding: 15px;
     margin-top: 5px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* Эти стили сработают только на iOS */
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  body {
+    height: 100dvh;
   }
 }
