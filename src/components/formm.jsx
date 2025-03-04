@@ -53,6 +53,7 @@ const Form = () => {
           <label htmlFor="sum" className="form-label">Sum:</label>
           <input 
             type="number" 
+            inputmode="decimal"
             id="sum"
             className="form-control" 
             value={sum} 

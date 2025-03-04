@@ -108,6 +108,7 @@ body {
     box-shadow: none;
     border-radius: 10px;
     animation: fadeIn 1s ease-in-out;
+    width: 90%;
   }
 
   .expense-form .form-control,
@@ -149,7 +150,7 @@ body {
   }
 
   select {
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
     appearance: none;
   }
 
